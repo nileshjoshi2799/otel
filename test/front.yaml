@@ -1,0 +1,15 @@
+version: '3.5'
+services:
+  static-site1:
+    image: prakhar1989/static-site
+    ports: 
+      - 8889:80
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    networks:
+      - myproxynet
+
+networks:
+  myproxynet:
+    external:
+      name: custom_network

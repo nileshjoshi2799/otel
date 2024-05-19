@@ -1,0 +1,15 @@
+version: "3.5"
+services:
+  proxy:
+    image: hello-world
+    ports:
+      - "80:80"
+    networks:
+      - proxynet
+
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+
+networks:
+  proxynet:
+    name: custom_network
